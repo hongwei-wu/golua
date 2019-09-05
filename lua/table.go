@@ -67,7 +67,7 @@ func (x *table) Index(index Value) Value {
 func newTable(state *State, arrayN, hashN int) *table {
 	t := table{state: state}
 	if arrayN > 0 {
-		t.list = make([]Value, arrayN)
+		t.list = make([]Value, 0, arrayN)
 	}
 	if hashN > 0 {
 		t.hash = make(map[Value]Value, hashN)
